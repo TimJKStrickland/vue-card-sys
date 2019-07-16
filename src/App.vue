@@ -1,17 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Cards v-bind:cards="cards"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Cards from './components/Cards.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Cards
+  },
+  data() {
+    return {
+      cards: [
+        {
+          "id":"Nerium",
+               "tags":["CMS Selection", "Experience Design"],
+               "image":"http://herodigi....jpg",
+               "title":"Nerium: Reimagining the CX for Nerium International",
+               "description":"As Nerium Internation....",
+               "featured":0
+        },
+        {
+          "id":"Nerium",
+               "tags":["CMS Selection", "Experience Design"],
+               "image":"http://herodigi....jpg",
+               "title":"Nerium: Reimagining the digital CX for Nerium International",
+               "description":"As Nerium Internation....",
+               "featured":0
+        }
+      ]
+    }
   }
 }
 </script>

@@ -1,6 +1,14 @@
 <template>
   <div class="card">
-    <h1>{{ this.carta.title }}</h1>
+    <div>
+      <img v-bind:src="this.carta.image" class="card-image" alt="" />
+    </div>
+    <p class="title">{{ this.carta.title }}</p>
+    <div class="back">
+      <p v-bind:key="tag" v-for="tag in this.carta.tags">
+      {{ tag }}
+      </p>
+    </div>
   </div>
 </template>
 
@@ -13,9 +21,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .card{
-    flex-basis: 33%;
-    max-width: 33%;
-    display: flex;
+.card-image {
+  width: 100%;
+}
+  .back {
+    display: none;
+  }
+  .card {
+    flex-direction: column;
   }
 </style>

@@ -8,31 +8,31 @@
 
 <script>
 import Carta from './Carta.vue';
-import axios from 'axios';
+// import axios from 'axios';
 export default {
   name: 'Cartas',
   props: ['cartas'],
   components: {
     Carta
   },
-  methods: {
-    getData(){
-      let config = {
-        headers: {
-          'Accept': 'headers/json'
-        }
-      };
-      axios.get('https://s3-us-west-1.amazonaws.com/hero-engineering-public/interview/fe-code-challenge.json', config)
-        .then(res => { this.cartas = res.data.cards; })
-        .catch(err => this.cartas = err)
-    }
-  },
-  data(){
-    this.getData()
-  },
-  created: function(){
-   this.getData();
-  },
+  // methods: {
+    // getData(){
+      // let config = {
+      //   headers: {
+      //     'Accept': 'headers/json'
+      //   }
+      // };
+      // axios.get('https://s3-us-west-1.amazonaws.com/hero-engineering-public/interview/fe-code-challenge.json', config)
+      //   .then(res => { this.cartas = res.data.cards; })
+      //   .catch(err => this.cartas = err)
+    // }
+  // },
+  // data(){
+    // return { cartas: getData() }
+  // },
+  // created: function(){
+  //  this.getData();
+  // },
 }
 </script>
 
